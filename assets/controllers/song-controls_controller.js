@@ -1,25 +1,28 @@
+// Create a global variable to store the current playing audio
+let currentAudio = null;
+
 import { Controller } from '@hotwired/stimulus';
 import axios from 'axios';
-/*
- * This is an example Stimulus controller!
- *
- * Any element with a data-controller="hello" attribute will cause
- * this controller to be executed. The name "hello" comes from the filename:
- * hello_controller.js -> "hello"
- *
- * Delete this file or adapt it for your use!
- */
+
 export default class extends Controller {
     static values = {
-        infoUrl: String
-    }
+        infoUrl: String,
+    };
+
     play(event) {
         event.preventDefault();
-
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+        }
         axios.get(this.infoUrlValue)
-        .then((response)=>{
-            const audio = new Audio(response.data.url);
-            audio.play();
-        });
+            .then(response => {
+                const audio = new Audio(response.data.url);
+                currentAudio = audio; 
+                audio.play();
+            })
+            .catch(error => {
+                console.error('Error loading audio:', error);
+            });
     }
 }

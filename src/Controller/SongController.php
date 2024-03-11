@@ -12,14 +12,20 @@ class SongController extends AbstractController
 
     public function getSong(int $id, LoggerInterface $logger):Response
     {
-          
-        $song = [
-            'id' => $id,
-            'name' => 'Waterfalls',
-            'url' => 'https://symfonycasts.s3.amazonaws.com/sample.mp3',
-        ];
         
-        return $this->json($song);
+        $songs = [
+            1 => ['name' => 'Suzume', 'url' => '/audio/Suzume no tojimari.mp3'],
+            2 => ['name' => 'Shootout', 'url' => '/audio/Izzamuzzic - Shootout.mp3'],
+            3 => ['name' => 'I Follow Rivers', 'url' => '/audio/I Follow Rivers - Lykke Li.mp3'],
+            4 => ['name' => 'Sweater Weather', 'url' => '/audio/Sweater Weather.mp3'],
+            5 => ['name' => 'Petit Biscuit - Sunset Lover', 'url' => '/audio/Petit Biscuit - Sunset Lover.mp3'],
+            6 => ['name' => 'Modjo - Lady', 'url' => '/audio/Modjo - Lady.mp3'],
+            7 => ['name' => 'diedlonely', 'url' => '/audio/diedlonely.mp3'],
+            
+        ];
+
+        
+        return $this->json($songs[$id]);
     }
 
 }
