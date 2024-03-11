@@ -11,12 +11,13 @@ class VinylController  extends AbstractController
     public function homepage() : Response
     {
         $tracks = [
-            ['song' => 'dangsta\'s Paradise', 'artist' => 'Coolio'],
-            ['song' => 'Waterfalls', 'artist' => 'TLC'],
-            ['song' => 'Creep', 'artist' => 'Radiohead'],
-            ['song' => 'Kiss from a Rose', 'artist' => 'Seal'],
-            ['song' => 'On Bended Knee', 'artist' => 'Boyz II Men'],
-            ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
+            ['song' => 'suzme no tajumir', 'artist' => 'TOAKA'],
+            ['song' => 'Shootout', 'artist' => 'Izzamuzzic'],
+            ['song' => 'I Follow Rivers', 'artist' => 'Lykke Li'],
+            ['song' => 'Sweater Weather', 'artist' => 'The Neighbourhood'],
+            ['song' => 'petit Biscuit', 'artist' => 'Boyz II Men'],
+            ['song' => 'Lady Hear Me Tonight', 'artist' => 'Modjo'],
+            ['song' => 'Diedlonely', 'artist' => 'Steller'],
         ];
     return $this->render('vinyl/homepage.html.twig',[
         'title'=> 'PB & Jams',
