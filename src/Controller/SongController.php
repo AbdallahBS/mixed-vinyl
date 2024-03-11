@@ -20,7 +20,7 @@ class SongController extends AbstractController
             4 => ['name' => 'Sweater Weather', 'url' => '/audio/Sweater Weather.mp3'],
             5 => ['name' => 'Petit Biscuit - Sunset Lover', 'url' => '/audio/Petit Biscuit - Sunset Lover.mp3'],
             6 => ['name' => 'Modjo - Lady', 'url' => '/audio/Modjo - Lady.mp3'],
-            7 => ['name' => 'diedlonely', 'url' => '/audio/diedlonely.mp3'],
+            7 => ['name' => 'diedlonelly', 'url' => '/audio/diedlonely.mp3'],
             
         ];
 
